@@ -23,6 +23,25 @@ app.controller("indexController", function($scope, $http){
 
     $scope.carregarPosts();
 
+    $scope.post = {};
+
+    $scope.salvarPost = function(post){
+        $http({
+            method: 'POST',
+            url: 'https://jsonplaceholder.typicode.com/posts/',
+            data: post
+        }).then(function successCallback(response) {
+            console.log(response.data);
+            // console.log(response.status);
+            $scope.posts = response.data;
+
+            $scope.carregarPosts();
+        }, function errorCallback(response) {
+            console.log(response.data);
+            // console.log(response.status);
+        });
+    }
+
    
 
 })
