@@ -25,11 +25,11 @@ app.controller("indexController", function($scope, $http){
 
     $scope.post = {};
 
-    $scope.salvarPost = function(post){
+    $scope.salvarPost = function(){
         $http({
             method: 'POST',
             url: 'https://jsonplaceholder.typicode.com/posts/',
-            data: post
+            data: $scope.post
         }).then(function successCallback(response) {
             console.log(response.data);
             // console.log(response.status);
