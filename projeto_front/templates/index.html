@@ -7,33 +7,36 @@
         <meta charset="utf-8">
 
         <title>SGSI</title>
+        <!-- <base href="/" /> -->
 
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
 
         <!-- Stylesheets -->
         <!-- Bootstrap is included in its original form, unaltered -->
-        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/css/bootstrap.min.css">
 
         <!-- Related styles of various icon packs and plugins -->
-        <link rel="stylesheet" href="../assets/css/plugins.css">
+        <link rel="stylesheet" href="../static/css/plugins.css">
 
         <!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
-        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="../static/css/main.css">
 
-        <!-- Include a specific file here from ../assets/css/themes/ folder to alter the default theme of the template -->
+        <!-- Include a specific file here from ../static/css/themes/ folder to alter the default theme of the template -->
 
         <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
-        <link rel="stylesheet" href="../assets/css/themes.css">
+        <link rel="stylesheet" href="../static/css/themes.css">
         <!-- END Stylesheets -->
 
         <!-- Modernizr (browser feature detection library) & Respond.js (Enable responsive CSS code on browsers that don't support it, eg IE8) -->
-        <script src="../assets/js/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
+        <script src="../static/js/vendor/modernizr-2.7.1-respond-1.4.2.min.js"></script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-        <script src="../assets/js/App.js"></script>
+        <script src="../static/js/vendor/angular.min.js"></script>
+        <script src="../static/js/vendor/angular-route.js"></script>
+        <script src="../static/js/App.js"></script>
+        <script src="../static/js/controllers/usuario-controller.js"></script>
 
     </head>
-    <body ng-controller="indexController">
+    <body>
 
         <div id="page-wrapper">
 
@@ -53,55 +56,7 @@
                         <div class="sidebar-content">
                             <!-- Brand -->
                             <a href="index.html" class="sidebar-brand" style="text-align: center">
-                                <strong><img src="../assets/img/logo-login.png" alt="Login" class="animation-pulseSlow" width="70"></strong>
-                            </a>
-                            <!-- END Brand -->
-
-                            <!-- User Info -->
-                            <div class="sidebar-section sidebar-user clearfix">
-                                <div class="sidebar-user-avatar">
-                                    <a href="page_ready_user_profile.html">
-                                        <img src="../assets/img/placeholders/avatars/avatar2.jpg" alt="avatar">
-                                    </a>
-                                </div>
-                                <div class="sidebar-user-name">Otávio Mafra</div>
-                                <div class="sidebar-user-links">
-                                    <a href="page_ready_user_profile.html" data-toggle="tooltip" data-placement="bottom" title="Perfil"><i class="gi gi-user"></i></a>
-                                    <!-- Opens the user settings modal that can be found at the bottom of each page (page_footer.html in PHP version) -->
-                                    <a href="login.html" data-toggle="tooltip" data-placement="bottom" title="Sair"><i class="gi gi-exit"></i></a>
-                                </div>
-                            </div>
-                            <!-- END User Info -->
-
-                            <!-- Theme Colors -->
-                            <!-- Change Color Theme functionality can be found in js/app.js - templateOptions() -->
-                            <ul class="sidebar-section sidebar-themes clearfix">
-                                <li class="active">
-                                    <a href="javascript:void(0)" class="themed-background-dark-default themed-border-default" data-theme="default" data-toggle="tooltip" title="Default Blue"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="themed-background-dark-night themed-border-night" data-theme="../assets/css/themes/night.css" data-toggle="tooltip" title="Night"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="themed-background-dark-amethyst themed-border-amethyst" data-theme="../assets/css/themes/amethyst.css" data-toggle="tooltip" title="Amethyst"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="themed-background-dark-modern themed-border-modern" data-theme="../assets/css/themes/modern.css" data-toggle="tooltip" title="Modern"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="themed-background-dark-autumn themed-border-autumn" data-theme="../assets/css/themes/autumn.css" data-toggle="tooltip" title="Autumn"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="themed-background-dark-flatie themed-border-flatie" data-theme="../assets/css/themes/flatie.css" data-toggle="tooltip" title="Flatie"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="themed-background-dark-spring themed-border-spring" data-theme="../assets/css/themes/spring.css" data-toggle="tooltip" title="Spring"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="themed-background-dark-fancy themed-border-fancy" data-theme="../assets/css/themes/fancy.css" data-toggle="tooltip" title="Fancy"></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="themed-background-dark-fire themed-border-fire" data-theme="../assets/css/themes/fire.css" data-toggle="tooltip" title="Fire"></a>
+                                <strong><img src="../static/css/themes/fire.css" data-toggle="tooltip" title="Fire"></a>
                                 </li>
                             </ul>
                             <!-- END Theme Colors -->
@@ -123,7 +78,7 @@
                                     <a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Usuários</a>
                                     <ul>
                                         <li>
-                                            <a href="usuario.html">Novo</a>
+                                            <a href="/projeto_front/templates/#/usuario">Novo</a>
                                         </li>
                                         <li>
                                             <a href="page_ui_grid_blocks.html">Editar</a>
@@ -258,7 +213,7 @@
                     <!-- END Header -->
 
                     <!-- Page content -->
-                    <div id="page-content">
+                    <div id="page-content" ng-view="ng-view">
                         <!-- Dashboard Header -->
                         <!-- For an image header add the class 'content-header-media' and an image as in the following example -->
                         <div class="content-header content-header-media">
@@ -266,7 +221,7 @@
                                 <div class="row">
                                     <!-- Main Title (hidden on small devices for the statistics to fit) -->
                                     <div class="col-md-4 col-lg-6 hidden-xs hidden-sm">
-                                        <h1>Bem vindo <strong>{{nome}}</strong><br><small>Tenha um bom dia!</small></h1>
+                                        <!-- <h1>Bem vindo <strong>{{nome}}</strong><br><small>Tenha um bom dia!</small></h1> -->
                                     </div>
                                     <!-- END Main Title -->
 
@@ -276,7 +231,7 @@
                                 </div>
                             </div>
                             <!-- For best results use an image with a resolution of 2560x248 pixels (You can also use a blurred image with ratio 10:1 - eg: 1000x100 pixels - it will adjust and look great!) -->
-                            <img src="../assets/img/placeholders/headers/dashboard_header.jpg" alt="header image" class="animation-pulseSlow">
+                            <img src="../static/img/placeholders/headers/dashboard_header.jpg" alt="header image" class="animation-pulseSlow">
                         </div>
                         <!-- END Dashboard Header -->
 
@@ -341,7 +296,7 @@
                             </div>
                         </div>
 
-                        <div class="row">
+                        <!-- <div class="row">
                             <form>
                                 <input type="text" name="title" value="title" ng-model="post.title">
                                 <input type="text" name="body" value="body" ng-model="post.body">
@@ -350,7 +305,7 @@
                             <div class="col-sm-6 col-lg-3" ng-repeat="post in posts">
                                 {{post.id}}
                             </div>
-                        </div>
+                        </div> -->
                         <!-- END Mini Top Stats Row -->
 
                         <!-- Widgets Row -->
@@ -442,22 +397,22 @@
         <!-- END User Settings -->
 
         <!-- Remember to include excanvas for IE8 chart support -->
-        <!--[if IE 8]><script src="../assets/js/helpers/excanvas.min.js"></script><![endif]-->
+        <!--[if IE 8]><script src="../static/js/helpers/excanvas.min.js"></script><![endif]-->
 
         
         
 
         <!-- Include Jquery library from Google's CDN but if something goes wrong get Jquery from local file (Remove 'http:' if you have SSL) -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>!window.jQuery && document.write(decodeURI('%3Cscript src="../assets/js/vendor/jquery-1.11.1.min.js"%3E%3C/script%3E'));</script>
+        <script>!window.jQuery && document.write(decodeURI('%3Cscript src="../static/js/vendor/jquery-1.11.1.min.js"%3E%3C/script%3E'));</script>
 
         <!-- Bootstrap.js, Jquery plugins and Custom JS code -->
-        <script src="../assets/js/vendor/bootstrap.min.js"></script>
-        <script src="../assets/js/plugins.js"></script>
-        <script src="../assets/js/app_effect.js"></script>
+        <script src="../static/js/vendor/bootstrap.min.js"></script>
+        <script src="../static/js/plugins.js"></script>
+        <script src="../static/js/app_effect.js"></script>
 
         <!-- Load and execute javascript code used only in this page -->
-        <script src="../assets/js/pages/index.js"></script>
+        <script src="../static/js/pages/index.js"></script>
         <script>$(function(){ Index.init(); });</script>
     </body>
 </html>
